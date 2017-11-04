@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="TCP协议总结TCP协议总结最近把TCP协议又重新看了一下,在这里总结一下. 概述 TCP提供一个面向连接的,可靠的字节流服务,他通过下面几种方式来提供可靠性的 不同于UDP服务,TCP将应用数据被分割成认为最适合发送的数据块 当TCP发出一个段后，它启动一个定时器，等待目的端确认收 到这个报文段.如果不能及时收到一个确认，将重发这个报文段(TCP的超时重试机制) 当TCP收到发自TCP连接另一端">
+<meta name="description" content="TCP协议总结最近把TCP协议又重新看了一下,在这里总结一下. 概述 TCP提供一个面向连接的,可靠的字节流服务,他通过下面几种方式来提供可靠性的 不同于UDP服务,TCP将应用数据被分割成认为最适合发送的数据块 当TCP发出一个段后，它启动一个定时器，等待目的端确认收 到这个报文段.如果不能及时收到一个确认，将重发这个报文段(TCP的超时重试机制) 当TCP收到发自TCP连接另一端的数据，它将发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP协议总结">
 <meta property="og:url" content="http://yoursite.com/2017/11/04/TCP协议总结/index.html">
 <meta property="og:site_name" content="心有猛虎 细嗅蔷薇">
-<meta property="og:description" content="TCP协议总结TCP协议总结最近把TCP协议又重新看了一下,在这里总结一下. 概述 TCP提供一个面向连接的,可靠的字节流服务,他通过下面几种方式来提供可靠性的 不同于UDP服务,TCP将应用数据被分割成认为最适合发送的数据块 当TCP发出一个段后，它启动一个定时器，等待目的端确认收 到这个报文段.如果不能及时收到一个确认，将重发这个报文段(TCP的超时重试机制) 当TCP收到发自TCP连接另一端">
+<meta property="og:description" content="TCP协议总结最近把TCP协议又重新看了一下,在这里总结一下. 概述 TCP提供一个面向连接的,可靠的字节流服务,他通过下面几种方式来提供可靠性的 不同于UDP服务,TCP将应用数据被分割成认为最适合发送的数据块 当TCP发出一个段后，它启动一个定时器，等待目的端确认收 到这个报文段.如果不能及时收到一个确认，将重发这个报文段(TCP的超时重试机制) 当TCP收到发自TCP连接另一端的数据，它将发">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2017/11/04/TCP协议总结/报文首部.png">
 <meta property="og:image" content="http://yoursite.com/2017/11/04/TCP协议总结/握手挥手.png">
@@ -94,10 +94,13 @@
 <meta property="og:image" content="http://om6ayrafu.bkt.clouddn.com/post/understand-tcp-udp/95A36446FAD21CC3DD086FA683942FFA.png">
 <meta property="og:image" content="http://om6ayrafu.bkt.clouddn.com/post/understand-tcp-udp/686E3FC14C2DEF657C61ECBC16C9C954.png">
 <meta property="og:image" content="https://community.emc.com/servlet/JiveServlet/downloadImage/2-842129-96705/image002.jpg">
-<meta property="og:updated_time" content="2017-11-04T13:01:38.866Z">
+<meta property="og:image" content="https://community.emc.com/servlet/JiveServlet/downloadImage/2-842879-97160/image002.jpg">
+<meta property="og:image" content="https://community.emc.com/servlet/JiveServlet/downloadImage/2-842879-97164/image003.jpg">
+<meta property="og:image" content="https://community.emc.com/servlet/JiveServlet/downloadImage/2-842879-97165/image004.jpg">
+<meta property="og:updated_time" content="2017-11-04T13:04:00.530Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP协议总结">
-<meta name="twitter:description" content="TCP协议总结TCP协议总结最近把TCP协议又重新看了一下,在这里总结一下. 概述 TCP提供一个面向连接的,可靠的字节流服务,他通过下面几种方式来提供可靠性的 不同于UDP服务,TCP将应用数据被分割成认为最适合发送的数据块 当TCP发出一个段后，它启动一个定时器，等待目的端确认收 到这个报文段.如果不能及时收到一个确认，将重发这个报文段(TCP的超时重试机制) 当TCP收到发自TCP连接另一端">
+<meta name="twitter:description" content="TCP协议总结最近把TCP协议又重新看了一下,在这里总结一下. 概述 TCP提供一个面向连接的,可靠的字节流服务,他通过下面几种方式来提供可靠性的 不同于UDP服务,TCP将应用数据被分割成认为最适合发送的数据块 当TCP发出一个段后，它启动一个定时器，等待目的端确认收 到这个报文段.如果不能及时收到一个确认，将重发这个报文段(TCP的超时重试机制) 当TCP收到发自TCP连接另一端的数据，它将发">
 <meta name="twitter:image" content="http://yoursite.com/2017/11/04/TCP协议总结/报文首部.png">
 
 
@@ -338,7 +341,7 @@
       
 
       
-        <h3 id="TCP协议总结"><a href="#TCP协议总结" class="headerlink" title="TCP协议总结"></a>TCP协议总结</h3><h3 id="TCP协议总结-1"><a href="#TCP协议总结-1" class="headerlink" title="TCP协议总结"></a>TCP协议总结</h3><p>最近把TCP协议又重新看了一下,在这里总结一下.</p>
+        <h3 id="TCP协议总结"><a href="#TCP协议总结" class="headerlink" title="TCP协议总结"></a>TCP协议总结</h3><p>最近把TCP协议又重新看了一下,在这里总结一下.</p>
 <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ul>
 <li>TCP提供一个面向连接的,可靠的字节流服务,他通过下面几种方式来提供可靠性的<ul>
 <li>不同于UDP服务,TCP将应用数据被分割成认为最适合发送的数据块</li>
@@ -480,9 +483,25 @@
 <p>还有一个重要的问题，服务器将如何处理片段4呢？虽然客户端在等待片段3，服务器没有收到反馈，所以它并不知道片段3丢失了，同样它也不知道片段4发生了什么（以及接下来传输的数据）。很有可能客户端已经接收到了片段4但是不能确认，也有可能片段4也丢失了。一些实现中会选择仅仅重传片段3，也有些会把3和4都重传。</p>
 <p><a href="https://community.emc.com/servlet/JiveServlet/showImage/2-842129-96705/image002.jpg" target="_blank" rel="external"><img src="https://community.emc.com/servlet/JiveServlet/downloadImage/2-842129-96705/image002.jpg" alt="image002.jpg"></a></p>
 <p>最后一个问题是重传队列中所使用片段重传计时器的值。如果设置过低，会发生过量重传，如果设置过高，重传丢失片段会减弱性能。必须通过一个称为自适应重传的过程来动态调整这个值</p>
-<h3 id="确认机制"><a href="#确认机制" class="headerlink" title="确认机制"></a>确认机制</h3><p>还是以下图为例，服务器发送了4个片段并收到1条回复，确认号为201。因此，片段1和片段2被当成已确认。它们从重传队列中移出，同时允许服务器发送窗口向右移动200字节，从而发送数据增加200个字节。<br>然而，再次假设片段3，从sequence number201开始，在发送过程中丢失了。由于客户端从没有收到这一片段，所以它也无法发送确认号高于201的确认信息，从而导致滑动窗口停滞。服务器可以继续发送其他片段直到填满客户端的接收窗口，但是直到客户端发送另一条确认信息，服务器的发送窗口都不会滑动。<br>另一个问题是如果片段3丢失了，客户端将无法告知服务器是否收到后续的片段。在客户端接收窗口填满之前，很有可能客户端已经接收到片段4以及之后的片段。但是客户端无法发送值为501的确认信息以表明接收到片段4，因为这意味着片段3也接收到了。<br>image002.jpg</p>
-<p>这里我们看到了TCP单编号，累积确认机制的缺点。我们可以想象一个最差的情况，服务器被告知它有一个10，000字节窗口，20个片段每个片段500字节。第一个片段丢失了，其他19个被接收到了。但是由于第一个片段从没有接收到，其他19个也无法确认。<br>未确认片段处理策略：<br>我们怎样处理丢失片段之后的片段呢？本例中，当服务器片段3重传超时，它必须决定怎样处理片段4，它不知道客户端是否已经接收到。在上述最差情况下，第一个片段丢失后，其余19个可能或可能无法被客户端接收到。<br>处理这种情况有两种可能的方式：<br>仅重传超时片段：这是一种更加保守的方式，仅重传超时的片段，希望其他片段都能够成功接收。如果该片段之后的其他片段实际上接收到了，这一方式是最佳的，如果没接收到，就无法正常执行。后者的情况每一个片段需要单独计时并重传。假设上述最坏情况下，所有20个500字节片段都丢失了。我们需要等片段1超时并重传。这一片段也许会得到确认，但之后我们需要等待片段2超时并重传。这一过程会重复多次。<br>重传所有片段：这是一种更激进或者说更悲观的方式。无论何时一个片段超时了，不仅重传该片段，还有所有其他尚未确认的片段。这一方式确保了任何时间都有一个等待确认的停顿时间，在所有未确认片段丢失的情况下，会刷新全部未确认片段，以使对端设备多一次接收机会。在所有20个片段都丢失的情况下，相对于第一种方式节省了大量时间。这种方式的问题在于可能这些重传是不必要的。如果第一个片段丢失而其他19个实际上接收到了，也得重传那9500字节数据。<br>由于TCP不知道其他片段是否接收到，所以它也无法确认哪种方法更好，但只能选择一种方式。上图示例了保守的方式，而下图显示的是激进的方式：<br>image003.jpg</p>
-<p>问题的关键在于无法确认非连续片段。解决方式是对TCP滑动窗口算法进行扩展，添加允许设备分别确认非连续片段的功能。这一功能称为选择确认（selective acknowledgment, SACK）。<br>选择确认：<br>通过SACK，连接的两方设备必须同时支持这一功能，通过连接时使用的SYN片段来协商是否允许SACK。这一过程完成之后，任一设备都可以在常规TCP片段中使用SACK选项。这一选项包含一个关于已接收但未确认片段数据sequence number范围的列表，由于它们是非连续的。<br>各设备对重传队列进行修改，如果该片段已被选择确认过，则该片段中的SACK比特位置为1。该设备使用图2中激进方式的改进版本，一个片段重传之后，之后所有片段也会重传，除非SACK比特位为1。<br>例如，在4个片段的情况下，如果客户端接收到片段4而没有接收到片段3，当它发回确认号为201（片段1和片段2）的确认信息，其中包含一个SACK选项指明：“已接收到字节361至500，但尚未确认”。如果片段4在片段1和2之后到达，上述信息也可以通过第二个确认片段来完成。服务器确认片段4的字节范围，并为片段4打开SACK位。当片段3重传时，服务器看到片段4的SACK位为1，就不会对其重传。如下图所示。<br>在片段3重传之后，片段4的SACK位被清除。这是为了防止客户端出于某种原因改变片段4已接收的想法。客户端应当发送确认号为501或更高的确认信息，正式确认片段3和4接收到。如果这一情况没有发生，服务器必须接收到片段4的另一条选择确认信息才能将它的SACK位打开，否则，在片段3重传时或计时器超时的情况下会对其自动重传。<br>image004.jpg</p>
+<h3 id="确认机制"><a href="#确认机制" class="headerlink" title="确认机制"></a>确认机制</h3><p>还是以下图为例，服务器发送了4个片段并收到1条回复，确认号为201。因此，片段1和片段2被当成已确认。它们从重传队列中移出，同时允许服务器发送窗口向右移动200字节，从而发送数据增加200个字节。</p>
+<p>然而，再次假设片段3，从sequence number201开始，在发送过程中丢失了。由于客户端从没有收到这一片段，所以它也无法发送确认号高于201的确认信息，从而导致滑动窗口停滞。服务器可以继续发送其他片段直到填满客户端的接收窗口，但是直到客户端发送另一条确认信息，服务器的发送窗口都不会滑动。</p>
+<p>另一个问题是如果片段3丢失了，客户端将无法告知服务器是否收到后续的片段。在客户端接收窗口填满之前，很有可能客户端已经接收到片段4以及之后的片段。但是客户端无法发送值为501的确认信息以表明接收到片段4，<strong>因为这意味着片段3也接收到了</strong>。</p>
+<p><a href="https://community.emc.com/servlet/JiveServlet/showImage/2-842879-97160/image002.jpg" target="_blank" rel="external"><img src="https://community.emc.com/servlet/JiveServlet/downloadImage/2-842879-97160/image002.jpg" alt="image002.jpg"></a></p>
+<p>这里我们看到了TCP单编号，累积确认机制的缺点。我们可以想象一个最差的情况，服务器被告知它有一个10，000字节窗口，20个片段每个片段500字节。第一个片段丢失了，其他19个被接收到了。但是由于第一个片段从没有接收到，其他19个也无法确认。</p>
+<p><strong>未确认片段处理策略：</strong></p>
+<p>我们怎样处理丢失片段之后的片段呢？本例中，当服务器片段3重传超时，它必须决定怎样处理片段4，它不知道客户端是否已经接收到。在上述最差情况下，第一个片段丢失后，其余19个可能或可能无法被客户端接收到。</p>
+<p>处理这种情况有两种可能的方式：</p>
+<p><strong>仅重传超时片段</strong>：这是一种更加保守的方式，仅重传超时的片段，希望其他片段都能够成功接收。如果该片段之后的其他片段实际上接收到了，这一方式是最佳的，如果没接收到，就无法正常执行。后者的情况每一个片段需要单独计时并重传。假设上述最坏情况下，所有20个500字节片段都丢失了。我们需要等片段1超时并重传。这一片段也许会得到确认，但之后我们需要等待片段2超时并重传。这一过程会重复多次。</p>
+<p><strong>重传所有片段</strong>：这是一种更激进或者说更悲观的方式。无论何时一个片段超时了，不仅重传该片段，还有所有其他尚未确认的片段。这一方式确保了任何时间都有一个等待确认的停顿时间，在所有未确认片段丢失的情况下，会刷新全部未确认片段，以使对端设备多一次接收机会。在所有20个片段都丢失的情况下，相对于第一种方式节省了大量时间。这种方式的问题在于可能这些重传是不必要的。如果第一个片段丢失而其他19个实际上接收到了，也得重传那9500字节数据。</p>
+<p>由于TCP不知道其他片段是否接收到，所以它也无法确认哪种方法更好，但只能选择一种方式。上图示例了保守的方式，而下图显示的是激进的方式：</p>
+<p><a href="https://community.emc.com/servlet/JiveServlet/showImage/2-842879-97164/image003.jpg" target="_blank" rel="external"><img src="https://community.emc.com/servlet/JiveServlet/downloadImage/2-842879-97164/image003.jpg" alt="image003.jpg"></a></p>
+<p>问题的关键在于无法确认非连续片段。解决方式是对TCP滑动窗口算法进行扩展，添加允许设备分别确认非连续片段的功能。这一功能称为选择确认（selective acknowledgment, SACK）。</p>
+<p><strong>选择确认：</strong></p>
+<p>通过SACK，连接的两方设备必须同时支持这一功能，通过连接时使用的SYN片段来协商是否允许SACK。这一过程完成之后，任一设备都可以在常规TCP片段中使用SACK选项。这一选项包含一个关于已接收但未确认片段数据sequence number范围的列表，由于它们是非连续的。</p>
+<p>各设备对重传队列进行修改，如果该片段已被选择确认过，则该片段中的SACK比特位置为1。该设备使用图2中激进方式的改进版本，一个片段重传之后，之后所有片段也会重传，<strong>除非SACK比特位为1</strong>。</p>
+<p>例如，在4个片段的情况下，如果客户端接收到片段4而没有接收到片段3，当它发回确认号为201（片段1和片段2）的确认信息，其中包含一个SACK选项指明：“已接收到字节361至500，但尚未确认”。如果片段4在片段1和2之后到达，上述信息也可以通过第二个确认片段来完成。服务器确认片段4的字节范围，并为片段4打开SACK位。当片段3重传时，服务器看到片段4的SACK位为1，就不会对其重传。如下图所示。</p>
+<p>在片段3重传之后，片段4的SACK位被清除。这是为了防止客户端出于某种原因改变片段4已接收的想法。客户端应当发送确认号为501或更高的确认信息，正式确认片段3和4接收到。如果这一情况没有发生，服务器必须接收到片段4的另一条选择确认信息才能将它的SACK位打开，否则，在片段3重传时或计时器超时的情况下会对其自动重传。</p>
+<p><a href="https://community.emc.com/servlet/JiveServlet/showImage/2-842879-97165/image004.jpg" target="_blank" rel="external"><img src="https://community.emc.com/servlet/JiveServlet/downloadImage/2-842879-97165/image004.jpg" alt="image004.jpg"></a></p>
 
       
     </div>
@@ -644,7 +663,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP协议总结"><span class="nav-number">1.</span> <span class="nav-text">TCP协议总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP协议总结-1"><span class="nav-number">2.</span> <span class="nav-text">TCP协议总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">3.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP的报文首部"><span class="nav-number">4.</span> <span class="nav-text">TCP的报文首部</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP三次握手与四次挥手"><span class="nav-number">5.</span> <span class="nav-text">TCP三次握手与四次挥手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#滑动窗口机制"><span class="nav-number">6.</span> <span class="nav-text">滑动窗口机制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可靠性交付的实现"><span class="nav-number"></span> <span class="nav-text">可靠性交付的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#超时重传"><span class="nav-number"></span> <span class="nav-text">超时重传</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#重传时机"><span class="nav-number"></span> <span class="nav-text">重传时机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重传算法"><span class="nav-number"></span> <span class="nav-text">重传算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先认识两个概念"><span class="nav-number">1.</span> <span class="nav-text">先认识两个概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RTO-Retransmission-Time-Out-重传超时时间"><span class="nav-number">1.1.</span> <span class="nav-text">RTO ( Retransmission Time-Out ) 重传超时时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RTT-Round-Trip-Time-连接往返时间"><span class="nav-number">1.2.</span> <span class="nav-text">RTT ( Round Trip Time ) 连接往返时间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jacobson-Karels-算法"><span class="nav-number">2.</span> <span class="nav-text">Jacobson / Karels 算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#滑动窗口-Sliding-Window"><span class="nav-number"></span> <span class="nav-text">滑动窗口 Sliding Window</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#发送窗口"><span class="nav-number"></span> <span class="nav-text">发送窗口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接收窗口"><span class="nav-number"></span> <span class="nav-text">接收窗口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重传机制"><span class="nav-number">1.</span> <span class="nav-text">重传机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#确认机制"><span class="nav-number">2.</span> <span class="nav-text">确认机制</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP协议总结"><span class="nav-number">1.</span> <span class="nav-text">TCP协议总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">2.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP的报文首部"><span class="nav-number">3.</span> <span class="nav-text">TCP的报文首部</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP三次握手与四次挥手"><span class="nav-number">4.</span> <span class="nav-text">TCP三次握手与四次挥手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#滑动窗口机制"><span class="nav-number">5.</span> <span class="nav-text">滑动窗口机制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可靠性交付的实现"><span class="nav-number"></span> <span class="nav-text">可靠性交付的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#超时重传"><span class="nav-number"></span> <span class="nav-text">超时重传</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#重传时机"><span class="nav-number"></span> <span class="nav-text">重传时机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重传算法"><span class="nav-number"></span> <span class="nav-text">重传算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先认识两个概念"><span class="nav-number">1.</span> <span class="nav-text">先认识两个概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RTO-Retransmission-Time-Out-重传超时时间"><span class="nav-number">1.1.</span> <span class="nav-text">RTO ( Retransmission Time-Out ) 重传超时时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RTT-Round-Trip-Time-连接往返时间"><span class="nav-number">1.2.</span> <span class="nav-text">RTT ( Round Trip Time ) 连接往返时间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jacobson-Karels-算法"><span class="nav-number">2.</span> <span class="nav-text">Jacobson / Karels 算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#滑动窗口-Sliding-Window"><span class="nav-number"></span> <span class="nav-text">滑动窗口 Sliding Window</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#发送窗口"><span class="nav-number"></span> <span class="nav-text">发送窗口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接收窗口"><span class="nav-number"></span> <span class="nav-text">接收窗口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重传机制"><span class="nav-number">1.</span> <span class="nav-text">重传机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#确认机制"><span class="nav-number">2.</span> <span class="nav-text">确认机制</span></a></li></ol></div>
             
 
           </div>
