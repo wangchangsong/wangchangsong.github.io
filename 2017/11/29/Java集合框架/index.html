@@ -354,6 +354,31 @@
 </ul>
 <h3 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h3><h5 id="基本概况-1"><a href="#基本概况-1" class="headerlink" title="基本概况"></a>基本概况</h5><p>List 承诺可以将元素维护在特定的序列中.List接口在Collection的基础上添加了大量的方法，使得可以再List中间插入和移除元素。</p>
 <h5 id="List源码"><a href="#List源码" class="headerlink" title="List源码"></a>List源码</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">Collection</span>&lt;<span class="title">E</span>&gt; </span>&#123;</div><div class="line"></div><div class="line">       ...</div><div class="line"></div><div class="line">       <span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span></span>;</div><div class="line"></div><div class="line">       <span class="function"><span class="keyword">boolean</span> <span class="title">remove</span><span class="params">(Object o)</span></span>;</div><div class="line"></div><div class="line">       <span class="function"><span class="keyword">boolean</span> <span class="title">containsAll</span><span class="params">(Collection&lt;?&gt; c)</span></span>;</div><div class="line"></div><div class="line">       <span class="function"><span class="keyword">boolean</span> <span class="title">addAll</span><span class="params">(Collection&lt;? extends E&gt; c)</span></span>;</div><div class="line"></div><div class="line">       <span class="function"><span class="keyword">boolean</span> <span class="title">addAll</span><span class="params">(<span class="keyword">int</span> index, Collection&lt;? extends E&gt; c)</span></span>;</div><div class="line"></div><div class="line">       <span class="function"><span class="keyword">boolean</span> <span class="title">removeAll</span><span class="params">(Collection&lt;?&gt; c)</span></span>;</div><div class="line"></div><div class="line">       <span class="function"><span class="keyword">boolean</span> <span class="title">retainAll</span><span class="params">(Collection&lt;?&gt; c)</span></span>;</div><div class="line"></div><div class="line">       <span class="function">E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span></span>;</div><div class="line"></div><div class="line">       <span class="function">E <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, E element)</span></span>;</div><div class="line"></div><div class="line">       <span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, E element)</span></span>;</div><div class="line"></div><div class="line">       <span class="function">E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span></span>;</div><div class="line"></div><div class="line">       <span class="function"><span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(Object o)</span></span>;</div><div class="line"></div><div class="line">       <span class="function"><span class="keyword">int</span> <span class="title">lastIndexOf</span><span class="params">(Object o)</span></span>;</div><div class="line"></div><div class="line">       java.util.<span class="function">List&lt;E&gt; <span class="title">subList</span><span class="params">(<span class="keyword">int</span> fromIndex, <span class="keyword">int</span> toIndex)</span></span>;</div><div class="line"></div><div class="line">       ...</div><div class="line"></div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>List接口有两个实现类ArrayList和LinkedList</p>
+<table>
+<thead>
+<tr>
+<th>list类型</th>
+<th>优点</th>
+<th>缺点</th>
+<th>底层实现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ArrayList</td>
+<td>随机访问元素较快</td>
+<td>中间元素的插入和删除较慢</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>LinkedList</td>
+<td>中间元素的插入和删除，顺序访问的优化</td>
+<td>随机访问元素较慢</td>
+<td>双向链表</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
