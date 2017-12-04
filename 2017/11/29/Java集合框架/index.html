@@ -86,13 +86,18 @@
 <meta property="og:site_name" content="心有猛虎 细嗅蔷薇">
 <meta property="og:description" content="深入Java集合框架基本概况Java集合容器的继承关系  在Java容器中一共定义了两种集合,顶层接口分别是Collection和Map. 简单的来看,Collection代表的是单个对象的序列(可以有序/无序,可以重复/不重复)  Map代表的是”键值对”对象的集合(同样可以有序/无序) 迭代器Iterator先介绍一下迭代器。迭代器本身也是一种设计模式，设计的初衷在于：容器的实现由很多种，而我">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2017/11/29/Java集合框架/1.png">
-<meta property="og:image" content="http://yoursite.com/2017/11/29/Java集合框架/2.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/29/Java集合框架/1511882748549.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/29/Java集合框架/1511970534238.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/29/Java集合框架/1512307610159.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/29/Java集合框架/1512307669486.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/29/Java集合框架/1512307707119.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/29/Java集合框架/1512307733190.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/29/Java集合框架/1512307770733.png">
 <meta property="og:updated_time" content="2017-11-29T16:09:56.241Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java集合框架">
 <meta name="twitter:description" content="深入Java集合框架基本概况Java集合容器的继承关系  在Java容器中一共定义了两种集合,顶层接口分别是Collection和Map. 简单的来看,Collection代表的是单个对象的序列(可以有序/无序,可以重复/不重复)  Map代表的是”键值对”对象的集合(同样可以有序/无序) 迭代器Iterator先介绍一下迭代器。迭代器本身也是一种设计模式，设计的初衷在于：容器的实现由很多种，而我">
-<meta name="twitter:image" content="http://yoursite.com/2017/11/29/Java集合框架/1.png">
+<meta name="twitter:image" content="http://yoursite.com/2017/11/29/Java集合框架/1511882748549.png">
 
 
 
@@ -333,11 +338,11 @@
 
       
         <h3 id="深入Java集合框架"><a href="#深入Java集合框架" class="headerlink" title="深入Java集合框架"></a>深入Java集合框架</h3><h3 id="基本概况"><a href="#基本概况" class="headerlink" title="基本概况"></a>基本概况</h3><p>Java集合容器的继承关系</p>
-<p><img src="/2017/11/29/Java集合框架/1.png" alt="Alt text"></p>
+<p><img src="/2017/11/29/Java集合框架/1511882748549.png" alt="Alt text"></p>
 <p>在Java容器中一共定义了两种集合,顶层接口分别是Collection和Map.</p>
 <p>简单的来看,Collection代表的是单个对象的序列(可以有序/无序,可以重复/不重复)  Map代表的是”键值对”对象的集合(同样可以有序/无序)</p>
 <h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><h5 id="Iterator"><a href="#Iterator" class="headerlink" title="Iterator"></a>Iterator</h5><p>先介绍一下迭代器。迭代器本身也是一种设计模式，设计的初衷在于：容器的实现由很多种，而我们想对容器进行遍历操作的话，首先不应该关心容器实现的细节，其次遍历操作应该是轻量级的。迭代器统一了对容器的访问方式，同时创建它的代价很小。值得注意的是，Iterator只能单向移动。<br>迭代器指向的位置是元素之前的位置,如下图所示:</p>
-<p><img src="/2017/11/29/Java集合框架/2.png" alt="Alt text"></p>
+<p><img src="/2017/11/29/Java集合框架/1511970534238.png" alt="Alt text"></p>
 <h5 id="迭代器源码"><a href="#迭代器源码" class="headerlink" title="迭代器源码"></a>迭代器源码</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Iterator</span>&lt;<span class="title">E</span>&gt; </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="function">E <span class="title">next</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> UnsupportedOperationException(<span class="string">"remove"</span>);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">forEachRemaining</span><span class="params">(Consumer&lt;? <span class="keyword">super</span> E&gt; action)</span> </span>&#123;</div><div class="line">        Objects.requireNonNull(action);</div><div class="line">        <span class="keyword">while</span> (hasNext())</div><div class="line">            action.accept(next());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">通过容器的iterator()方法拿到容器的迭代器</div><div class="line">迭代器的next()获取下一个元素</div><div class="line">hasNext()判断是否还有元素</div><div class="line">remove()删除指定元素</div></pre></td></tr></table></figure>
 <h5 id="ListIterator和Iterator的异同点"><a href="#ListIterator和Iterator的异同点" class="headerlink" title="ListIterator和Iterator的异同点"></a>ListIterator和Iterator的异同点</h5><p>相同点:</p>
@@ -379,6 +384,14 @@
 </tr>
 </tbody>
 </table>
+<h5 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h5><p> <strong>ArrayList 的底层数据结构是一个数组,其实它就是一个普通的类</strong></p>
+<p> 我们来看一段代码：<br> <img src="/2017/11/29/Java集合框架/1512307610159.png" alt="Alt text"></p>
+<p> 首先：执行List<string> list1 = new ArrayList&lt;&gt;();当看到new这个关键字的时候，我们脑袋里应该第一印象就是这货在堆内存开辟了一块空间，好我们再来画一画。</string></p>
+<p><img src="/2017/11/29/Java集合框架/1512307669486.png" alt="Alt text"></p>
+<p>好，既然是new出来的，那我们直接从构造函数入手，看一下构造函数做了什么。</p>
+<p><img src="/2017/11/29/Java集合框架/1512307707119.png" alt="Alt text"><br>很简单，就一行代码，继续看一下，this.elementData和DEFAULTCAPACITY_EMPTY_ELEMENTDATA分别是什么</p>
+<p><img src="/2017/11/29/Java集合框架/1512307733190.png" alt="Alt text"><br>红框里的内容是不是似曾相识？是的，和String一样，底层是数组，唯一的区别是String底层是char[]数组,而这儿是Object[]数组，也就是说该数组可以放任何对象（所有对象都继承自父类Object）,执行完构造函数后，如下图。</p>
+<p><img src="/2017/11/29/Java集合框架/1512307770733.png" alt="Alt text"></p>
 
       
     </div>
@@ -540,7 +553,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#深入Java集合框架"><span class="nav-number">1.</span> <span class="nav-text">深入Java集合框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概况"><span class="nav-number">2.</span> <span class="nav-text">基本概况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代器"><span class="nav-number">3.</span> <span class="nav-text">迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Iterator"><span class="nav-number">3.0.1.</span> <span class="nav-text">Iterator</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代器源码"><span class="nav-number">3.0.2.</span> <span class="nav-text">迭代器源码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ListIterator和Iterator的异同点"><span class="nav-number">3.0.3.</span> <span class="nav-text">ListIterator和Iterator的异同点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List接口"><span class="nav-number">4.</span> <span class="nav-text">List接口</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本概况-1"><span class="nav-number">4.0.1.</span> <span class="nav-text">基本概况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#List源码"><span class="nav-number">4.0.2.</span> <span class="nav-text">List源码</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#深入Java集合框架"><span class="nav-number">1.</span> <span class="nav-text">深入Java集合框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概况"><span class="nav-number">2.</span> <span class="nav-text">基本概况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代器"><span class="nav-number">3.</span> <span class="nav-text">迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Iterator"><span class="nav-number">3.0.1.</span> <span class="nav-text">Iterator</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代器源码"><span class="nav-number">3.0.2.</span> <span class="nav-text">迭代器源码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ListIterator和Iterator的异同点"><span class="nav-number">3.0.3.</span> <span class="nav-text">ListIterator和Iterator的异同点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List接口"><span class="nav-number">4.</span> <span class="nav-text">List接口</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本概况-1"><span class="nav-number">4.0.1.</span> <span class="nav-text">基本概况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#List源码"><span class="nav-number">4.0.2.</span> <span class="nav-text">List源码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ArrayList"><span class="nav-number">4.0.3.</span> <span class="nav-text">ArrayList</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
