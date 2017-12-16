@@ -384,8 +384,36 @@
 <li>接口是 Java 类型系统的一部分</li>
 <li>接口天然就拥有其运行时表示（Runtime representation）<ul>
 <li>接口可以通过 Javadoc 注释来表达一些非正式的协定（contract），例如，通过注释说明该操作应可交换（commutative）</li>
+<li>接口可以通过 Javadoc 注释来表达一些非正式的协定（contract），例如，通过注释说明该操作应可交换（commutative）</li>
 </ul>
 </li>
+</ul>
+<p>上面提到的 <code>ActionListener</code> 接口只有一个方法，大多数回调接口都拥有这个特征：比如 <code>Runnable</code> 接口和 <code>Comparator</code> 接口。我们把这些只拥有一个方法的接口称为 <em>函数式接口</em>。（之前它们被称为 <em>SAM类型</em>，即 <em>单抽象方法类型</em>（Single Abstract Method））</p>
+<p>我们并不需要额外的工作来声明一个接口是函数式接口：编译器会根据接口的结构自行判断（判断过程并非简单的对接口方法计数：一个接口可能冗余的定义了一个 <code>Object</code> 已经提供的方法，比如 <code>toString()</code>，或者定义了静态方法或默认方法，这些都不属于函数式接口方法的范畴）。不过API作者们可以通过 <code>@FunctionalInterface</code> 注解来显式指定一个接口是函数式接口（以避免无意声明了一个符合函数式标准的接口），加上这个注解之后，编译器就会验证该接口是否满足函数式接口的要求。</p>
+<p>实现函数式类型的另一种方式是引入一个全新的 <em>结构化</em> 函数类型，我们也称其为“箭头”类型。例如，一个接收 <code>String</code> 和 <code>Object</code> 并返回 <code>int</code> 的函数类型可以被表示为 <code>(String, Object) -&gt; int</code>。我们仔细考虑了这个方式，但出于下面的原因，最终将其否定：</p>
+<ul>
+<li>它会为Java类型系统引入额外的复杂度，并带来 <a href="http://en.wikipedia.org/wiki/Structural_type_system" target="_blank" rel="external">结构类型（Structural Type）</a> 和 <a href="http://en.wikipedia.org/wiki/Nominal_type_system" target="_blank" rel="external">指名类型（Nominal Type）</a> 的混用。（Java 几乎全部使用指名类型）</li>
+<li>它会导致类库风格的分歧——一些类库会继续使用回调接口，而另一些类库会使用结构化函数类型</li>
+<li>它的语法会变得十分笨拙，尤其在包含受检异常（checked exception）之后</li>
+<li>每个函数类型很难拥有其运行时表示，这意味着开发者会受到 <a href="http://en.wikipedia.org/wiki/Type_erasure" target="_blank" rel="external">类型擦除（erasure）</a> 的困扰和局限。比如说，我们无法对方法 <code>m(T-&gt;U)</code> 和 <code>m(X-&gt;Y)</code> 进行重载（Overload）</li>
+</ul>
+<p>所以我们选择了“使用已知类型”这条路——因为现有的类库大量使用了函数式接口，通过沿用这种模式，我们使得现有类库能够直接使用 lambda 表达式。例如下面是 Java SE 7 中已经存在的函数式接口：</p>
+<ul>
+<li><a href="http://download.oracle.com/javase/7/docs/api/java/lang/Runnable.html" target="_blank" rel="external">java.lang.Runnable</a></li>
+<li><a href="http://download.oracle.com/javase/7/docs/api/java/util/concurrent/Callable.html" target="_blank" rel="external">java.util.concurrent.Callable</a></li>
+<li><a href="http://download.oracle.com/javase/7/docs/api/java/security/PrivilegedAction.html" target="_blank" rel="external">java.security.PrivilegedAction</a></li>
+<li><a href="http://download.oracle.com/javase/7/docs/api/java/util/Comparator.html" target="_blank" rel="external">java.util.Comparator</a></li>
+<li><a href="http://download.oracle.com/javase/7/docs/api/java/io/FileFilter.html" target="_blank" rel="external">java.io.FileFilter</a></li>
+<li><a href="http://www.fxfrog.com/docs_www/api/java/beans/PropertyChangeListener.html" target="_blank" rel="external">java.beans.PropertyChangeListener</a></li>
+</ul>
+<p>除此之外，Java SE 8中增加了一个新的包：<code>java.util.function</code>，它里面包含了常用的函数式接口，例如：</p>
+<ul>
+<li><code>Predicate&lt;T&gt;</code>——接收 <code>T</code> 并返回 <code>boolean</code></li>
+<li><code>Consumer&lt;T&gt;</code>——接收 <code>T</code>，不返回值</li>
+<li><code>Function&lt;T, R&gt;</code>——接收 <code>T</code>，返回 <code>R</code></li>
+<li><code>Supplier&lt;T&gt;</code>——提供 <code>T</code> 对象（例如工厂），不接收值</li>
+<li><code>UnaryOperator&lt;T&gt;</code>——接收 <code>T</code> 对象，返回 <code>T</code></li>
+<li><code>BinaryOperator&lt;T&gt;</code>——接收两个 <code>T</code>，返回 <code>T</code></li>
 </ul>
 
       
